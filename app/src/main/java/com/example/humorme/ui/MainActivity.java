@@ -21,6 +21,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.card1)
     CardView trump;
+    @BindView(R.id.card2) CardView chuck;
 
 
     private FirebaseAuth auth;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
 
         trump.setOnClickListener(this);
+        chuck.setOnClickListener(this);
     }
     @Override
     public void onStart() {
@@ -89,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == trump){
             Intent intent = new Intent(this, QuoteActivity.class);
+            startActivity(intent);
+        }
+        if (v == chuck){
+            Intent intent = new Intent(this, ChuckActivity.class);
             startActivity(intent);
         }
     }
