@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "380935280229",
+    "firebase_url": "https://humor-me-77d61.firebaseio.com",
+    "project_id": "humor-me-77d61",
+    "storage_bucket": "humor-me-77d61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380935280229:android:404afaa00bc8308c",
+        "android_client_info": {
+          "package_name": "com.example.humorme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380935280229-ukkvifbkm5qbmknigdehrj9kapnne0pr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.humorme",
+            "certificate_hash": "ca82ebe935944192b40c641a9c6f3f3c17479c95"
+          }
+        },
+        {
+          "client_id": "380935280229-jeuo020n78uacjc486p24fq0pkjj9mu3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMRt6eox-3Qwh0Z-Z3TKQNXKOjL3WnG0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380935280229-jeuo020n78uacjc486p24fq0pkjj9mu3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
