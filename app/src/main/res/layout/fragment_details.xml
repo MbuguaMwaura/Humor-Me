@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailsFragment"
+
+    >
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+        <RelativeLayout
+            android:id="@+id/fragRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="400sp">
+
+            <TextView
+            android:id="@+id/fragmentTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:text="THIS IS WHERE JOKES GO"
+            android:gravity="center"
+                />
+
+
+
+        </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_below="@+id/fragRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+
+        <TextView
+            android:id="@+id/saveText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Add to Joke List"
+            android:layout_margin="30dp"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_add_circle_outline_white_24dp"
+            android:drawableStart="@drawable/ic_add_circle_outline_white_24dp"
+            android:drawablePadding="10sp"
+
+            />
+
+    </LinearLayout>
+</RelativeLayout>
+
+</FrameLayout>

@@ -5,7 +5,7 @@ import java.util.List;
 public class Chuck {
 
 
-    private String value;
+    String value;
     private List<String> categories;
 
     public Chuck(String value) {

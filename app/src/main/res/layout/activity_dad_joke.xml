@@ -7,9 +7,9 @@
     android:background="@color/colorPrimaryDark">
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewDadJoke"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerViewDadJoke"/>
+        android:layout_height="614dp" />
 
 
     <Button

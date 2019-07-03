@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DadJokeActivity"></activity>
+        <activity android:name=".ui.DetailsActivity"></activity>
+        <activity android:name=".ui.DadJokeActivity" />
         <activity android:name=".ui.ChuckActivity" />
         <activity android:name=".ui.QuoteActivity" />
         <activity

@@ -6,20 +6,19 @@ import org.parceler.Parcel;
 public class DadJoke {
 
 
-    private String joke;
+    String joke;
+
+    public DadJoke() {}
+
 
     public DadJoke(String joke) {
         this.joke = joke;
     }
 
-    public DadJoke() {
-    }
 
     public String getJoke() {
         return joke;
     }
 
-    public void setJoke(String joke) {
-        this.joke = joke;
-    }
+
 }

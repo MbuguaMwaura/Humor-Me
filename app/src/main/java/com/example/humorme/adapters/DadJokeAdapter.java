@@ -1,6 +1,7 @@
 package com.example.humorme.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 
 import com.example.humorme.R;
 import com.example.humorme.models.DadJoke;
+import com.example.humorme.ui.DetailsActivity;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -43,19 +47,30 @@ public class DadJokeAdapter extends RecyclerView.Adapter<DadJokeAdapter.DadJokeV
         return mDadJokes.size();
     }
 
-    public class DadJokeViewHolder extends RecyclerView.ViewHolder {
+    public class DadJokeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.dadJoke)
         TextView mDadJoke;
         private Context mContext;
 
         public DadJokeViewHolder(@NonNull View itemView) {
+
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         public void bindDadJokes(DadJoke dadJoke) {
             mDadJoke.setText(dadJoke.getJoke());
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, DetailsActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("dadJoke", Parcels.wrap(mDadJokes));
+            mContext.startActivity(intent);
         }
     }
 }

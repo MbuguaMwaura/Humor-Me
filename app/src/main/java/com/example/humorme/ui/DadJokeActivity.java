@@ -24,7 +24,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class DadJokeActivity extends AppCompatActivity implements View.OnClickListener {
+public class DadJokeActivity extends AppCompatActivity implements View.OnClickListener   {
     @BindView(R.id.recyclerViewDadJoke)
     RecyclerView recyclerViewDadJoke;
     @BindView(R.id.anotherBtnDadJoke)
