@@ -10,8 +10,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.humorme.R;
+import com.example.humorme.models.DadJoke;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.card1)
     CardView trump;
     @BindView(R.id.card2) CardView chuck;
+    @BindView(R.id.card3) CardView dadJokes;
 
+    private DadJoke dadJoke;
 
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         trump.setOnClickListener(this);
         chuck.setOnClickListener(this);
+        dadJokes.setOnClickListener(this);
     }
     @Override
     public void onStart() {
@@ -95,6 +100,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (v == chuck){
             Intent intent = new Intent(this, ChuckActivity.class);
+            startActivity(intent);
+        }
+        if(v == dadJokes){
+            Intent intent = new Intent(this, DadJokeActivity.class);
+            Toast.makeText(getApplicationContext(),"working", Toast.LENGTH_LONG).show();
             startActivity(intent);
         }
     }

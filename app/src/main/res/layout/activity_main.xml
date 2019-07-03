@@ -79,6 +79,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="180sp"
+        android:id="@+id/card3"
         android:layout_height="wrap_content"
         card_view:cardCornerRadius="30dp"
         android:layout_marginTop="20dp"
@@ -93,14 +94,14 @@
             android:gravity="center"
             >
             <ImageView
-                android:id="@+id/imageChuck"
+                android:id="@+id/imageDadJokes"
                 android:layout_width="wrap_content"
                 android:layout_height="300sp"
-                android:src="@drawable/laughing2"/>
+                android:src="@drawable/dadjokes"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TRONALD DUMP"
+                android:text="DAD JOKES"
                 />
 
         </LinearLayout>
@@ -133,7 +134,7 @@
                 android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TRONALD DUMP"
+                android:text="MEME GENERATOR"
 
                 />
 

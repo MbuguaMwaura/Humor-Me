@@ -60,9 +60,11 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:16.0.0'
 
 
+
     // CardView
     implementation 'com.android.support:cardview-v7:+'
     //material design
+    implementation 'com.android.support:design:28.0.0'
 
 
 }

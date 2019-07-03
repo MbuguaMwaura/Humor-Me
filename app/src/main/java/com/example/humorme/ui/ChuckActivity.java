@@ -1,16 +1,24 @@
 package com.example.humorme.ui;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.humorme.R;
 import com.example.humorme.adapters.ChuckAdapter;
 import com.example.humorme.models.Chuck;
+import com.example.humorme.models.DadJoke;
 import com.example.humorme.services.ChuckService;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.parceler.Parcels;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,6 +36,11 @@ public class ChuckActivity extends AppCompatActivity implements View.OnClickList
     Button anotherBtnChuck;
     @BindView(R.id.recyclerViewChuck)
     RecyclerView recyclerViewChuck;
+    @BindView(R.id.fab)
+    FloatingActionButton chuckFab;
+
+    private Chuck chuck;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +49,13 @@ public class ChuckActivity extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
 
         getChuck();
+
+
+
         anotherBtnChuck.setOnClickListener(this);
+        chuckFab.setOnClickListener(this);
     }
-    private void getChuck(){
+    private  Chuck getChuck(){
         final ChuckService chuckService = new ChuckService();
         chuckService.findRandomChuck(new Callback() {
             @Override
@@ -62,12 +79,16 @@ public class ChuckActivity extends AppCompatActivity implements View.OnClickList
                 });
             }
         });
+        return chuck;
     }
 
     @Override
     public void onClick(View v) {
         if (v == anotherBtnChuck){
             getChuck();
+        }
+        if (v == chuckFab){
+
         }
     }
 }

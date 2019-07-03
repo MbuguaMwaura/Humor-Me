@@ -11,5 +11,8 @@ public class Constants {
         public static final String RAPID_KEY_HEADER = "X-RapidAPI-Key";
         public static final String RAPID_HOST_HEADER = "X-RapidAPI-Host";
         public static final String RAPID_HOST = "matchilling-chuck-norris-jokes-v1.p.rapidapi.com";
+        public static final String API_DAD_JOKE = "https://icanhazdadjoke.com/";
+        public static final String DAD_JOKE_HEADER = "Accept";
+        public static final String DAD_JOKE_HEADER_VAL = "application/json";
 
 }
