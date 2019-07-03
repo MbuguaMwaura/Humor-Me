@@ -17,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ChuckAdapter extends  RecyclerView.Adapter<ChuckAdapter.ChuckViewHolder> {
-    private ArrayList<Chuck> mChucks = new ArrayList<>();
+    private ArrayList<Chuck> mChucks;
     private Context context;
 
     public ChuckAdapter (ArrayList<Chuck> chucks, Context context){

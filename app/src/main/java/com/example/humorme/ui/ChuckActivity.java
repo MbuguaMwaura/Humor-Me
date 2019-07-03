@@ -36,8 +36,7 @@ public class ChuckActivity extends AppCompatActivity implements View.OnClickList
     Button anotherBtnChuck;
     @BindView(R.id.recyclerViewChuck)
     RecyclerView recyclerViewChuck;
-    @BindView(R.id.fab)
-    FloatingActionButton chuckFab;
+
 
     private Chuck chuck;
 
@@ -53,7 +52,7 @@ public class ChuckActivity extends AppCompatActivity implements View.OnClickList
 
 
         anotherBtnChuck.setOnClickListener(this);
-        chuckFab.setOnClickListener(this);
+
     }
     private  Chuck getChuck(){
         final ChuckService chuckService = new ChuckService();
@@ -87,8 +86,6 @@ public class ChuckActivity extends AppCompatActivity implements View.OnClickList
         if (v == anotherBtnChuck){
             getChuck();
         }
-        if (v == chuckFab){
 
-        }
     }
 }

@@ -42,7 +42,7 @@
 
 
                 <TextView
-                    android:id="@+id/chuck"
+                    android:id="@+id/dadJoke"
                     android:layout_width="259sp"
                     android:layout_height="wrap_content"
                     android:gravity="center"

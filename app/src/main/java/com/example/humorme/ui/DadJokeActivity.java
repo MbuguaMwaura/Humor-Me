@@ -1,17 +1,19 @@
 package com.example.humorme.ui;
 
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.humorme.R;
-import com.example.humorme.adapters.DadJokeArrayAdapter;
+import com.example.humorme.adapters.DadJokeAdapter;
 import com.example.humorme.models.DadJoke;
 import com.example.humorme.services.DadJokeService;
-
-import org.parceler.Parcels;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,13 +24,15 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class DadJokeActivity extends AppCompatActivity {
+public class DadJokeActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.recyclerViewDadJoke)
+    RecyclerView recyclerViewDadJoke;
+    @BindView(R.id.anotherBtnDadJoke)
+    Button buttonAnotherDadJoke;
 
     ArrayList<DadJoke> mDadjokes;
-    @BindView(R.id.jokeItemLV)
-    ListView jokeItem;
-    private ArrayAdapter adapter;
-    private DadJokeArrayAdapter dadJokeArrayAdapter;
+
+    private DadJokeAdapter dadJokeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class DadJokeActivity extends AppCompatActivity {
 
 
     getJoke();
+    buttonAnotherDadJoke.setOnClickListener(this);
     }
 
     public void getJoke(){
@@ -55,12 +60,22 @@ public class DadJokeActivity extends AppCompatActivity {
                 DadJokeActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        dadJokeArrayAdapter = new DadJokeArrayAdapter(DadJokeActivity.this,android.R.layout.simple_list_item_1,mDadjokes);
-                        jokeItem.setAdapter(dadJokeArrayAdapter);
+                        dadJokeAdapter = new DadJokeAdapter(mDadjokes,getApplicationContext());
+                        recyclerViewDadJoke.setAdapter(dadJokeAdapter);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DadJokeActivity.this);
+                        recyclerViewDadJoke.setLayoutManager(layoutManager);
+                        recyclerViewDadJoke.setHasFixedSize(true);
+
                     }
                 });
             }
         });
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == buttonAnotherDadJoke){
+            getJoke();
+        }
+    }
 }
