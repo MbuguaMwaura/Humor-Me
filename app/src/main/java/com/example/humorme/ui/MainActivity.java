@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.card2) CardView chuck;
     @BindView(R.id.card3) CardView dadJokes;
 
+
     private DadJoke dadJoke;
 
     private FirebaseAuth auth;
@@ -107,5 +108,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(getApplicationContext(),"working", Toast.LENGTH_LONG).show();
             startActivity(intent);
         }
+
     }
 }
