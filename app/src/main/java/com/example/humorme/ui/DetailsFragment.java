@@ -1,6 +1,8 @@
 package com.example.humorme.ui;
 
 
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.humorme.Constants;
 import com.example.humorme.R;
@@ -29,6 +32,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.fragmentTV)
     TextView fragmentTV;
     @BindView(R.id.saveText) TextView saveText;
+    @BindView(R.id.copyClipboard) TextView copyClipboard;
 
     private DadJoke mDadJoke;
 
@@ -57,6 +61,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
         fragmentTV.setText(mDadJoke.getJoke());
 
         saveText.setOnClickListener(this);
+        copyClipboard.setOnClickListener(this);
         return view;
     }
 
@@ -67,6 +72,11 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
             reference.push().setValue(mDadJoke);
             Intent intent = new Intent(getContext(), SavedDadJokeActivity.class);
             startActivity(intent);
+        }
+        if (v == copyClipboard){
+            ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+            clipboard.setText(mDadJoke.getJoke());
+            Toast.makeText(getContext(),"Copied to Clipboard", Toast.LENGTH_LONG).show();
         }
     }
 }

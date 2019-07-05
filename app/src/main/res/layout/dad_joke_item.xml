@@ -14,21 +14,23 @@
         android:background="@color/white"/>
 
     <RelativeLayout
+        android:layout_below="@+id/imageChuck1"
         android:id="@+id/relay1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="20dp"
         >
 
 
         <android.support.v7.widget.CardView
-            android:layout_width="250sp"
+            android:layout_width="350sp"
             android:id="@+id/cardChuck"
             android:layout_height="wrap_content"
-            card_view:cardCornerRadius="30dp"
+            card_view:cardCornerRadius="10dp"
             android:layout_marginLeft="15dp"
+            android:layout_centerInParent="true"
             >
 
             <LinearLayout
@@ -36,15 +38,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:layout_margin="20dp"
                 >
 
 
                 <TextView
                     android:id="@+id/dadJoke"
-                    android:layout_width="259sp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:padding="10dp"
                     android:textSize="20dp"
                     android:text="Then we will create some Drawables that could be
                     used in your app and lastly for the grand finale we will try to

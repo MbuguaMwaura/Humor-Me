@@ -14,30 +14,28 @@
     android:layout_height="match_parent">
 
 
+    <RelativeLayout
+        android:id="@+id/fragRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="318dp">
 
-        <RelativeLayout
-            android:id="@+id/fragRelativeLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="400sp">
-
-            <TextView
+        <TextView
             android:id="@+id/fragmentTV"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="30sp"
-            android:text="THIS IS WHERE JOKES GO"
+            android:layout_height="297dp"
             android:gravity="center"
-                />
+            android:text="THIS IS WHERE JOKES GO"
+            android:textSize="30sp" />
 
 
-
-        </RelativeLayout>
+    </RelativeLayout>
 
 
     <LinearLayout
         android:layout_below="@+id/fragRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="@color/colorPrimaryDark">
 
 
@@ -55,6 +53,18 @@
             android:drawablePadding="10sp"
 
             />
+        <TextView
+            android:id="@+id/copyClipboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copy"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="30dp"
+            android:drawableLeft="@drawable/ic_content_copy_white_24dp"
+            android:drawableStart="@drawable/ic_content_copy_white_24dp"
+            android:drawablePadding="18sp" />
 
     </LinearLayout>
 </RelativeLayout>

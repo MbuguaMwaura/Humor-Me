@@ -14,7 +14,7 @@
 
     <Button
         android:id="@+id/anotherBtnDadJoke"
-        android:layout_width="wrap_content"
+        android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:text="another!"
         android:layout_alignParentBottom="true"

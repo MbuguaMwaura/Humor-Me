@@ -15,12 +15,11 @@
 
     <Button
         android:id="@+id/anotherBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:text="another!"
         android:visibility="visible"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60sp"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/rounded"/>
