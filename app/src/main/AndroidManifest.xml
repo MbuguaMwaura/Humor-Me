@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ChuckDetailActivity"></activity>
+        <activity android:name=".ui.QuotesDetailActivity"></activity>
+        <activity android:name=".ui.ChuckDetailActivity" />
         <activity android:name=".ui.SearchedChuckActivity" />
         <activity android:name=".ui.DetailsActivity" />
         <activity android:name=".ui.DadJokeActivity" />

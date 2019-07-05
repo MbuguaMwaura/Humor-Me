@@ -60,7 +60,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == saveText){
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("dadJoke").child("jokes");
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("dadJoke")    ;
             reference.setValue(mDadJoke);
         }
     }

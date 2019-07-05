@@ -1,13 +1,20 @@
 package com.example.humorme.models;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Quotes {
-    private String mQuote;
+    String quote;
+
+    public Quotes(){}
 
     public Quotes(String quote){
-        this.mQuote = quote;
+        this.quote = quote;
     }
 
+
+
     public String getmQuote() {
-        return mQuote;
+        return quote;
     }
 }
