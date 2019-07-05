@@ -61,13 +61,13 @@ public class SavedTrumpActivity extends AppCompatActivity {
             @NonNull
             @Override
             public FirebaseTrumpViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.quote_item,viewGroup,false);
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.saved_item,viewGroup,false);
                 return new FirebaseTrumpViewHolder(view)
 
                 ;
             }
         };
-        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(SavedTrumpActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(SavedTrumpActivity.this, LinearLayoutManager.VERTICAL, false);
 
         savedRV.setLayoutManager(horizontalLayoutManagaer);
         savedRV.setAdapter(firebaseRecyclerAdapter);

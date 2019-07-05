@@ -57,11 +57,11 @@ public class SavedDadJokeActivity extends AppCompatActivity {
             @NonNull
             @Override
             public FirebaseDadJokeViewholder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.dad_joke_item,viewGroup,false);
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.saved_item,viewGroup,false);
                 return new FirebaseDadJokeViewholder(view);
             }
         };
-        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(SavedDadJokeActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(SavedDadJokeActivity.this, LinearLayoutManager.VERTICAL, false);
         recyclerViewDadJoke.setLayoutManager(horizontalLayoutManagaer);
         recyclerViewDadJoke.setAdapter(firebaseRecyclerAdapter);
     }

@@ -35,7 +35,7 @@ public class FirebaseTrumpViewHolder extends RecyclerView.ViewHolder implements 
     }
 
     public void bindTrump(Quotes quotes){
-        TextView quoteTextView = (TextView) mView.findViewById(R.id.quote);
+        TextView quoteTextView = (TextView) mView.findViewById(R.id.savedItem);
         quoteTextView.setText(quotes.getQuote());
     }
 

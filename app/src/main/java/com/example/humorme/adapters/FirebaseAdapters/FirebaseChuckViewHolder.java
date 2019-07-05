@@ -34,7 +34,7 @@ public class FirebaseChuckViewHolder extends RecyclerView.ViewHolder implements 
     }
 
     public void bindChuck(Chuck chuck){
-        TextView quoteTextView = (TextView) mView.findViewById(R.id.chuck);
+        TextView quoteTextView = (TextView) mView.findViewById(R.id.savedItem);
         quoteTextView.setText(chuck.getValue());
     }
 

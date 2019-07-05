@@ -37,7 +37,7 @@ public class FirebaseDadJokeViewholder extends RecyclerView.ViewHolder implement
     }
 
     public void bindDadJoke(DadJoke dadJoke){
-        TextView quoteTextView = (TextView) mView.findViewById(R.id.dadJoke);
+        TextView quoteTextView = (TextView) mView.findViewById(R.id.savedItem);
         quoteTextView.setText(dadJoke.getJoke());
     }
 

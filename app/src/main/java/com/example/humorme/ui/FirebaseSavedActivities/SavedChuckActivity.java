@@ -58,11 +58,11 @@ public class SavedChuckActivity extends AppCompatActivity {
             @NonNull
             @Override
             public FirebaseChuckViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.chuck_item,viewGroup,false);
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.saved_item,viewGroup,false);
                 return new FirebaseChuckViewHolder(view);
             }
         };
-        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(SavedChuckActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager horizontalLayoutManagaer = new LinearLayoutManager(SavedChuckActivity.this, LinearLayoutManager.VERTICAL, false);
         recyclerViewChuck.setLayoutManager(horizontalLayoutManagaer);
         recyclerViewChuck.setAdapter(firebaseRecyclerAdapter);
     }
