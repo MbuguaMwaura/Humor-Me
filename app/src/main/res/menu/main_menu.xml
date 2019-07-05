@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_trump"
+        android:title="Saved Trump Quotes"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_chuck"
+        android:title="Saved Chuck Jokes"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_dadJoke"
+        android:title="Saved Dad Jokes"
+        android:visible="true"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/action_logout"
         android:title="Logout"

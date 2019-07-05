@@ -2,13 +2,17 @@ package com.example.humorme.ui;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.humorme.Constants;
 import com.example.humorme.R;
@@ -29,6 +33,8 @@ public class ChuckDetailFragment extends Fragment implements View.OnClickListene
     @BindView(R.id.chuckFragTV)
     TextView chuckFragmentTV;
     @BindView(R.id.saveChuckTextView) TextView saveChuckTV;
+    @BindView(R.id.sendBTN)
+    ImageView sendBtn;
 
     private Chuck mChuck;
 
@@ -55,6 +61,7 @@ public class ChuckDetailFragment extends Fragment implements View.OnClickListene
         ButterKnife.bind(this,view);
         chuckFragmentTV.setText(mChuck.getValue());
         saveChuckTV.setOnClickListener(this);
+        sendBtn.setOnClickListener(this);
         return view;
     }
 
@@ -65,6 +72,21 @@ public class ChuckDetailFragment extends Fragment implements View.OnClickListene
                 databaseReference.push().setValue(mChuck);
                 Intent intent  = new Intent(getContext(), SavedChuckActivity.class);
                 startActivity(intent);
+            }
+            if (v == sendBtn){
+                try
+                {
+                    // Check if the Twitter app is installed on the phone.
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text="+mChuck.getValue()+""));
+                    startActivity(browserIntent);
+
+
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(getActivity(),"Twitter is not installed on this device",Toast.LENGTH_LONG).show();
+
+                }
             }
     }
 }

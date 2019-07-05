@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import com.example.humorme.R;
 import com.example.humorme.models.DadJoke;
+import com.example.humorme.ui.FirebaseSavedActivities.SavedChuckActivity;
+import com.example.humorme.ui.FirebaseSavedActivities.SavedDadJokeActivity;
+import com.example.humorme.ui.FirebaseSavedActivities.SavedTrumpActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -82,6 +85,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             logout();
             return true;
         }
+        if (id == R.id.action_chuck){
+            Intent intent = new Intent(MainActivity.this, SavedChuckActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.action_dadJoke){
+            Intent intent = new Intent(MainActivity.this, SavedDadJokeActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.action_trump){
+            Intent intent = new Intent(MainActivity.this, SavedTrumpActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(menuItem);
     }
 
