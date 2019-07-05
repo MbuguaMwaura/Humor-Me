@@ -5,6 +5,7 @@ import org.parceler.Parcel;
 @Parcel
 public class Quotes {
     String quote;
+    private String pushId;
 
     public Quotes(){}
 
@@ -16,5 +17,14 @@ public class Quotes {
 
     public String getQuote() {
         return quote;
+    }
+
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }

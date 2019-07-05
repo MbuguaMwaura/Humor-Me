@@ -12,6 +12,8 @@ import com.example.humorme.R;
 import com.example.humorme.models.Chuck;
 import com.example.humorme.models.Quotes;
 import com.example.humorme.ui.ChuckDetailActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +44,9 @@ public class FirebaseChuckViewHolder extends RecyclerView.ViewHolder implements 
     @Override
     public void onClick(View v) {
         final ArrayList<Chuck> chucks = new ArrayList<>();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK).child(uid);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

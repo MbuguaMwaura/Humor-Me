@@ -11,6 +11,8 @@ import com.example.humorme.Constants;
 import com.example.humorme.R;
 import com.example.humorme.models.Quotes;
 import com.example.humorme.ui.QuotesDetailActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,7 +46,9 @@ public class FirebaseTrumpViewHolder extends RecyclerView.ViewHolder implements 
     @Override
     public void onClick(View v) {
         final ArrayList<Quotes> quotes = new ArrayList<>();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRUMP);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRUMP).child(uid);
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

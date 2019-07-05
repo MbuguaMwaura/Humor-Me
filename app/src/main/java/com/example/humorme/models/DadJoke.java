@@ -7,6 +7,7 @@ public class DadJoke {
 
 
     String joke;
+    private String pushId;
 
     public DadJoke() {}
 
@@ -20,5 +21,13 @@ public class DadJoke {
         return joke;
     }
 
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 
 }

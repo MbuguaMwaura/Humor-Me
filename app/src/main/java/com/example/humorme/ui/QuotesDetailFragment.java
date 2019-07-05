@@ -15,6 +15,8 @@ import com.example.humorme.Constants;
 import com.example.humorme.R;
 import com.example.humorme.models.Quotes;
 import com.example.humorme.ui.FirebaseSavedActivities.SavedTrumpActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -61,8 +63,13 @@ public class QuotesDetailFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v == saveQuoteTV){
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRUMP);
-            reference.push().setValue(mQuotes);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRUMP).child(uid);
+            DatabaseReference pushRef = reference.push();
+            String pushID = pushRef.getKey();
+            mQuotes.setPushId(pushID);
+            pushRef.setValue(mQuotes);
             Intent intent  = new Intent(getContext(), SavedTrumpActivity.class);
             startActivity(intent);
         }

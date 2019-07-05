@@ -17,6 +17,8 @@ import com.example.humorme.adapters.FirebaseAdapters.FirebaseTrumpViewHolder;
 import com.example.humorme.models.Chuck;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -41,7 +43,9 @@ public class SavedChuckActivity extends AppCompatActivity {
         setTitle("SAVED CHUCK JOKES");
         anotherBtnChuck.setVisibility(anotherBtnChuck.INVISIBLE);
 
-        reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK).child(uid);
         setUpFirebaseAdapter();
     }
 

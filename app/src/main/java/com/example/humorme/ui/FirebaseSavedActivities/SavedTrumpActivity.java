@@ -17,6 +17,8 @@ import com.example.humorme.models.Quotes;
 import com.example.humorme.ui.ChuckActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -41,8 +43,9 @@ public class SavedTrumpActivity extends AppCompatActivity {
         setTitle("SAVED TRUMP QUOTES");
         anotherBtn.setVisibility(anotherBtn.INVISIBLE);
 
-
-        reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRUMP);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRUMP).child(uid);
         setUpFireBaseAdapter();
 
     }

@@ -18,6 +18,8 @@ import com.example.humorme.Constants;
 import com.example.humorme.R;
 import com.example.humorme.models.Chuck;
 import com.example.humorme.ui.FirebaseSavedActivities.SavedChuckActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -68,8 +70,13 @@ public class ChuckDetailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
             if (v == saveChuckTV){
-                DatabaseReference databaseReference  = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK);
-                databaseReference.push().setValue(mChuck);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
+                DatabaseReference databaseReference  = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK).child(uid);
+                DatabaseReference pushRef = databaseReference.push();
+                String pushID = pushRef.getKey();
+                mChuck.setPushId(pushID);
+                pushRef.setValue(mChuck);
                 Intent intent  = new Intent(getContext(), SavedChuckActivity.class);
                 startActivity(intent);
             }

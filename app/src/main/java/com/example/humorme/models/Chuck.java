@@ -9,6 +9,7 @@ public class Chuck {
 
 
     String value;
+    private String pushId;
 
     public Chuck(){}
 
@@ -24,6 +25,15 @@ public class Chuck {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 

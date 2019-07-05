@@ -17,6 +17,8 @@ import com.example.humorme.adapters.FirebaseAdapters.FirebaseTrumpViewHolder;
 import com.example.humorme.models.DadJoke;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,7 +42,9 @@ public class SavedDadJokeActivity extends AppCompatActivity {
         setTitle("SAVED DAD JOKES");
         anotherBtnDadJoke.setVisibility(anotherBtnDadJoke.INVISIBLE);
 
-        reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DADJOKE);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
+        reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DADJOKE).child(uid);
         setUpFireBaseAdapter();
     }
 

@@ -17,6 +17,8 @@ import com.example.humorme.R;
 import com.example.humorme.models.Chuck;
 import com.example.humorme.models.DadJoke;
 import com.example.humorme.ui.FirebaseSavedActivities.SavedDadJokeActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -68,8 +70,13 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == saveText){
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DADJOKE)    ;
-            reference.push().setValue(mDadJoke);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DADJOKE).child(uid)    ;
+            DatabaseReference pushRef = reference.push();
+            String pushID = pushRef.getKey();
+            mDadJoke.setPushId(pushID);
+            pushRef.setValue(mDadJoke);
             Intent intent = new Intent(getContext(), SavedDadJokeActivity.class);
             startActivity(intent);
         }
