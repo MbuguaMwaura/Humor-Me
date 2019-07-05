@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.QuotesDetailActivity"></activity>
+        <activity android:name=".ui.FirebaseSavedActivities.SavedDadJokeActivity"></activity>
+        <activity android:name=".ui.FirebaseSavedActivities.SavedChuckActivity" />
+        <activity android:name=".ui.FirebaseSavedActivities.SavedTrumpActivity" />
+        <activity android:name=".ui.QuotesDetailActivity" />
         <activity android:name=".ui.ChuckDetailActivity" />
         <activity android:name=".ui.SearchedChuckActivity" />
         <activity android:name=".ui.DetailsActivity" />

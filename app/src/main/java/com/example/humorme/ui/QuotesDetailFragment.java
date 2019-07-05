@@ -1,6 +1,7 @@
 package com.example.humorme.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.support.annotation.Nullable;
@@ -10,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.humorme.Constants;
 import com.example.humorme.R;
 import com.example.humorme.models.Quotes;
+import com.example.humorme.ui.FirebaseSavedActivities.SavedTrumpActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -50,7 +53,7 @@ public class QuotesDetailFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_quotes_detail,container,false);
         ButterKnife.bind(this,view);
-        quotesFragmentTV.setText(mQuotes.getmQuote());
+        quotesFragmentTV.setText(mQuotes.getQuote());
         saveQuoteTV.setOnClickListener(this);
         return view;
     }
@@ -58,8 +61,10 @@ public class QuotesDetailFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v == saveQuoteTV){
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("trump");
-            reference.setValue(mQuotes);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_TRUMP);
+            reference.push().setValue(mQuotes);
+            Intent intent  = new Intent(getContext(), SavedTrumpActivity.class);
+            startActivity(intent);
         }
     }
 }

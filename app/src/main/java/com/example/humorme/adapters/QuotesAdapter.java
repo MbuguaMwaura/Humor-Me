@@ -62,7 +62,7 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QuotesView
         }
 
         public void bindQuotes(Quotes quotes){
-            mQuote.setText(quotes.getmQuote());
+            mQuote.setText(quotes.getQuote());
 
         }
 

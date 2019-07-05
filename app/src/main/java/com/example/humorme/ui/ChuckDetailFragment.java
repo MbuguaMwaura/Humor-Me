@@ -1,6 +1,7 @@
 package com.example.humorme.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.humorme.Constants;
 import com.example.humorme.R;
 import com.example.humorme.models.Chuck;
+import com.example.humorme.ui.FirebaseSavedActivities.SavedChuckActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -58,8 +61,10 @@ public class ChuckDetailFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
             if (v == saveChuckTV){
-                DatabaseReference databaseReference  = FirebaseDatabase.getInstance().getReference("chuck");
-                databaseReference.setValue(mChuck);
+                DatabaseReference databaseReference  = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK);
+                databaseReference.push().setValue(mChuck);
+                Intent intent  = new Intent(getContext(), SavedChuckActivity.class);
+                startActivity(intent);
             }
     }
 }

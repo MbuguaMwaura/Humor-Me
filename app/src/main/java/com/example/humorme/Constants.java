@@ -16,5 +16,9 @@ public class Constants {
         public static final String DAD_JOKE_HEADER_VAL = "application/json";
         public static final String API_CHUCK_SEARCH = "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/search";
         public static final String API_CHUCK_SEARCH_QUERY_PARAM = "query";
+        public static final String FIREBASE_CHILD_TRUMP = "trump";
+        public static final String FIREBASE_CHILD_CHUCK = "chuck";
+        public static final String FIREBASE_CHILD_DADJOKE = "dadJoke";
+
 
 }

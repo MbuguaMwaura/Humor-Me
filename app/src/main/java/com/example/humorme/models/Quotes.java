@@ -14,7 +14,7 @@ public class Quotes {
 
 
 
-    public String getmQuote() {
+    public String getQuote() {
         return quote;
     }
 }

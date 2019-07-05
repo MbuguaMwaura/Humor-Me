@@ -1,6 +1,7 @@
 package com.example.humorme.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.humorme.Constants;
 import com.example.humorme.R;
 import com.example.humorme.models.Chuck;
 import com.example.humorme.models.DadJoke;
+import com.example.humorme.ui.FirebaseSavedActivities.SavedDadJokeActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -60,8 +63,10 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == saveText){
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("dadJoke")    ;
-            reference.setValue(mDadJoke);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DADJOKE)    ;
+            reference.push().setValue(mDadJoke);
+            Intent intent = new Intent(getContext(), SavedDadJokeActivity.class);
+            startActivity(intent);
         }
     }
 }
