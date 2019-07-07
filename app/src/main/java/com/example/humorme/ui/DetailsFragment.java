@@ -4,11 +4,13 @@ package com.example.humorme.ui;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,8 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
     TextView fragmentTV;
     @BindView(R.id.saveText) TextView saveText;
     @BindView(R.id.copyClipboard) TextView copyClipboard;
+    @BindView(R.id.sendBTN)
+    ImageView sendBtn;
 
     private DadJoke mDadJoke;
 
@@ -64,6 +68,7 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
 
         saveText.setOnClickListener(this);
         copyClipboard.setOnClickListener(this);
+        sendBtn.setOnClickListener(this);
         return view;
     }
 
@@ -84,6 +89,18 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
             ClipboardManager clipboard = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
             clipboard.setText(mDadJoke.getJoke());
             Toast.makeText(getContext(),"Copied to Clipboard", Toast.LENGTH_LONG).show();
+        }
+        if (v == sendBtn){
+            try
+            {// Check if the Twitter app is installed on the phone.
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text="+mDadJoke.getJoke()+""));
+                startActivity(browserIntent);
+            }
+            catch (Exception e)
+            {
+                Toast.makeText(getActivity(),"Twitter is not installed on this device",Toast.LENGTH_LONG).show();
+
+            }
         }
     }
 }

@@ -82,12 +82,9 @@ public class ChuckDetailFragment extends Fragment implements View.OnClickListene
             }
             if (v == sendBtn){
                 try
-                {
-                    // Check if the Twitter app is installed on the phone.
+                {// Check if the Twitter app is installed on the phone.
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/intent/tweet?text="+mChuck.getValue()+""));
                     startActivity(browserIntent);
-
-
                 }
                 catch (Exception e)
                 {

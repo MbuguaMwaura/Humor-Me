@@ -17,12 +17,12 @@
     <RelativeLayout
         android:id="@+id/fragRelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="318dp">
+        android:layout_height="244dp">
 
         <TextView
             android:id="@+id/fragmentTV"
             android:layout_width="match_parent"
-            android:layout_height="297dp"
+            android:layout_height="241dp"
             android:gravity="center"
             android:text="THIS IS WHERE JOKES GO"
             android:textSize="30sp" />
@@ -57,7 +57,7 @@
             android:id="@+id/copyClipboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Copy"
+            android:text="copy"
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/white"
@@ -65,6 +65,33 @@
             android:drawableLeft="@drawable/ic_content_copy_white_24dp"
             android:drawableStart="@drawable/ic_content_copy_white_24dp"
             android:drawablePadding="18sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginTop="25sp"
+            android:id="@+id/sendBTN"
+            android:layout_marginLeft="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/twitter1"/>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tweet"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="17dp"
+                android:drawablePadding="18sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>
