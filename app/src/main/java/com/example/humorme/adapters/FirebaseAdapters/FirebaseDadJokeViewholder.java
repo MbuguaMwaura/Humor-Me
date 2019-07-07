@@ -3,6 +3,7 @@ package com.example.humorme.adapters.FirebaseAdapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 public class FirebaseDadJokeViewholder extends RecyclerView.ViewHolder implements View.OnClickListener{
     View mView;
     Context mContext;
+    public CardView mValueCardView;
 
 
 
@@ -39,6 +41,7 @@ public class FirebaseDadJokeViewholder extends RecyclerView.ViewHolder implement
     }
 
     public void bindDadJoke(DadJoke dadJoke){
+        mValueCardView = (CardView) mView.findViewById(R.id.card1);
         TextView quoteTextView = (TextView) mView.findViewById(R.id.savedItem);
         quoteTextView.setText(dadJoke.getJoke());
     }
