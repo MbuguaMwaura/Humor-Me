@@ -19,6 +19,7 @@ public class Constants {
         public static final String FIREBASE_CHILD_TRUMP = "trump";
         public static final String FIREBASE_CHILD_CHUCK = "chuck";
         public static final String FIREBASE_CHILD_DADJOKE = "dadJoke";
+        public static final String FIREBASE_QUERY_INDEX = "index";
 
 
 }

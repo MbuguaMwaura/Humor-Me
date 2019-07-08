@@ -4,6 +4,7 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Quotes {
+    String index;
     String quote;
     private String pushId;
 
@@ -11,6 +12,7 @@ public class Quotes {
 
     public Quotes(String quote){
         this.quote = quote;
+        this.index = "not_specified";
     }
 
 
@@ -26,5 +28,12 @@ public class Quotes {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 }

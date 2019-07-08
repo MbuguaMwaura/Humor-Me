@@ -89,4 +89,8 @@ public class SavedDadJokeActivity extends AppCompatActivity implements OnStartDr
     public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
         mItemTouchHelper.startDrag(viewHolder);
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mFirebaseAdapter.stopListening(); }
 }

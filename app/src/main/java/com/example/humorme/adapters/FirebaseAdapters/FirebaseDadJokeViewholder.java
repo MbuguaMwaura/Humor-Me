@@ -26,10 +26,11 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class FirebaseDadJokeViewholder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class FirebaseDadJokeViewholder extends RecyclerView.ViewHolder {
     View mView;
     Context mContext;
     public CardView mValueCardView;
+    public TextView mSavedItem;
 
 
 
@@ -37,41 +38,16 @@ public class FirebaseDadJokeViewholder extends RecyclerView.ViewHolder implement
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
-        itemView.setOnClickListener(this);
+
     }
 
     public void bindDadJoke(DadJoke dadJoke){
         mValueCardView = (CardView) mView.findViewById(R.id.card1);
+        mSavedItem = (TextView) mView.findViewById(R.id.savedItem);
         TextView quoteTextView = (TextView) mView.findViewById(R.id.savedItem);
         quoteTextView.setText(dadJoke.getJoke());
     }
 
 
-    @Override
-    public void onClick(View v) {
-        final ArrayList<DadJoke> dadJokes = new ArrayList<>();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_DADJOKE).child(uid);
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot: dataSnapshot.getChildren()){
-                    dadJokes.add(snapshot.getValue(DadJoke.class));
-                }
-                int itemPosition = getLayoutPosition();
 
-                Intent intent = new Intent(mContext, DetailsActivity.class);
-                intent.putExtra("position", itemPosition + "");
-                intent.putExtra("dadJoke", Parcels.wrap(dadJokes));
-
-                mContext.startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
 }

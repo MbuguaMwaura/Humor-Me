@@ -5,7 +5,7 @@ import org.parceler.Parcel;
 @Parcel
 public class DadJoke {
 
-
+    String index;
     String joke;
     private String pushId;
 
@@ -14,6 +14,7 @@ public class DadJoke {
 
     public DadJoke(String joke) {
         this.joke = joke;
+        this.index = "not_specified";
     }
 
 
@@ -28,6 +29,14 @@ public class DadJoke {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 
 }

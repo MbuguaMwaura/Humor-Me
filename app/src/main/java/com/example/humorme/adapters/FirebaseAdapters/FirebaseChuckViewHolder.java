@@ -25,51 +25,26 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class FirebaseChuckViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class FirebaseChuckViewHolder extends RecyclerView.ViewHolder{
     View mView;
     Context mContext;
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
     public CardView mValueCardView;
+    public TextView mSavedItem;
 
     public FirebaseChuckViewHolder(@NonNull View itemView) {
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
-        itemView.setOnClickListener(this);
     }
 
     public void bindChuck(Chuck chuck){
         mValueCardView = (CardView) mView.findViewById(R.id.card1);
+        mSavedItem = (TextView) mView.findViewById(R.id.savedItem);
         TextView quoteTextView = (TextView) mView.findViewById(R.id.savedItem);
         quoteTextView.setText(chuck.getValue());
     }
 
 
-    @Override
-    public void onClick(View v) {
-        final ArrayList<Chuck> chucks = new ArrayList<>();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK).child(uid);
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    chucks.add(snapshot.getValue(Chuck.class));
-
-                }
-                int itemPosition = getLayoutPosition();
-
-                Intent intent = new Intent(mContext, ChuckDetailActivity.class);
-                intent.putExtra("position", itemPosition + "");
-                intent.putExtra("chuck", Parcels.wrap(chucks));
-
-                mContext.startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
 }

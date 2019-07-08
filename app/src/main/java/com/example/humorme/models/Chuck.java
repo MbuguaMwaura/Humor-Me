@@ -7,7 +7,7 @@ import java.util.List;
 @Parcel
 public class Chuck {
 
-
+    String index;
     String value;
     private String pushId;
 
@@ -15,6 +15,7 @@ public class Chuck {
 
     public Chuck(String value) {
         this.value = value;
+        this.index = "not_specified";
     }
 
 
@@ -34,6 +35,13 @@ public class Chuck {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 
 

@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,26 +58,15 @@ public class SavedChuckActivity extends AppCompatActivity implements OnStartDrag
     private void setUpFirebaseAdapter() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
-        reference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK).child(uid);
+
+        Query query = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_CHUCK).child(uid).orderByChild(Constants.FIREBASE_QUERY_INDEX);
+
+
         FirebaseRecyclerOptions<Chuck> options = new FirebaseRecyclerOptions.Builder<Chuck>()
-                .setQuery(reference,Chuck.class)
+                .setQuery(query,Chuck.class)
                 .build();
-//        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Chuck, FirebaseChuckViewHolder>(options) {
-//            @Override
-//            protected void onBindViewHolder(@NonNull FirebaseChuckViewHolder holder, int position, @NonNull Chuck model) {
-//                holder.bindChuck(model);
-//            }
-//
-//            @NonNull
-//            @Override
-//            public FirebaseChuckViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-//                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.saved_item,viewGroup,false);
-//                return new FirebaseChuckViewHolder(view);
-//            }
-//        };
 
-
-        mFirebaseAdapter = new FirebaseChuckListAdapter(options,reference,this,this);
+        mFirebaseAdapter = new FirebaseChuckListAdapter(options,query,this,this);
         recyclerViewChuck.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewChuck.setAdapter(mFirebaseAdapter);
@@ -101,4 +91,8 @@ public class SavedChuckActivity extends AppCompatActivity implements OnStartDrag
     public void onStartDrag(RecyclerView.ViewHolder viewHolder){
         mItemTouchHelper.startDrag(viewHolder);
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mFirebaseAdapter.stopListening(); }
 }
