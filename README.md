@@ -9,19 +9,19 @@ like and share them to twitter or copy them to their clipboard to be pasted and 
 
 | Login Page                                                                                    | Create account page                                                                                    | Home Page                                                                                    |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| ![<img src="/readme/Login.png"](/readme/Login.png) | ![<img src="/readme/CreateAccount.png](/readme/CreateAccount.png) | ![<img src="/readme/Homepage.png](/readme/Homepage.png) |
+| ![<img src="/screenshots/Login.png"](/screenshots/Login.png) | ![<img src="/screenshots/CreateAccount.png](/screenshots/CreateAccount.png) | ![<img src="/screenshots/Homepage.png](/screenshots/Homepage.png) |
 
 | Home Page Menu                                                                                    | Chuck Norris page                                                                                    | Dad Joke Page                                                                                    |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| ![<img src="/readme/homepagemenu.png"](/readme/homepagemenu.png) | ![<img src="/readme/chuckPage.png](/readme/chuckPage.png) | ![<img src="/readme/dadJokePage.png](/readme/dadJokePage.png) |
+| ![<img src="/screenshots/homepagemenu.png"](/screenshots/homepagemenu.png) | ![<img src="/screenshots/chuckPage.png](/screenshots/chuckPage.png) | ![<img src="/screenshots/dadJokePage.png](/screenshots/dadJokePage.png) |
 
 |     Trump Page                                                                                    | Saved Chuck Norris page                                                                                    | Saved Dad Joke Page                                                                                    |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| ![<img src="/readme/trumpPage.png"](/readme/trumpPage.png) | ![<img src="/readme/SavedChuckPage.png](/readme/SavedChuckPage.png) | ![<img src="/readme/SavedDadJokePage.png](/readme/SavedDadJokePage.png) |
+| ![<img src="/screenshots/trumpPage.png"](/screenshots/trumpPage.png) | ![<img src="/screenshots/SavedChuckPage.png](/screenshots/SavedChuckPage.png) | ![<img src="/screenshots/SavedDadJokePage.png](/screenshots/SavedDadJokePage.png) |
 
 |    Saved Trump Page                                                                                    | Chuck Norris search view                                                                                 |                                                                                   |
 |-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| ![<img src="/readme/SavedTrumpPage.png"](/readme/SavedTrumpPage.png) | ![<img src="/readme/chucksearchView.png](/readme/chucksearchView.png) |  |
+| ![<img src="/screenshots/SavedTrumpPage.png"](/screenshots/SavedTrumpPage.png) | ![<img src="/screenshots/chucksearchView.png](/screenshots/chucksearchView.png) |  |
 
 
 ## Getting Started
