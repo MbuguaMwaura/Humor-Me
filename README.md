@@ -7,6 +7,22 @@ like and share them to twitter or copy them to their clipboard to be pasted and 
 * Android Studio - To write the android code
 * Firebase - User authentication and database
 
+| Login Page                                                                                    | Create account page                                                                                    | Home Page                                                                                    |
+|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| ![<img src="/readme/Login.png"](/readme/Login.png) | ![<img src="/readme/CreateAccount.png](/readme/CreateAccount.png) | ![<img src="/readme/Homepage.png](/readme/Homepage.png) |
+
+| Home Page Menu                                                                                    | Chuck Norris page                                                                                    | Dad Joke Page                                                                                    |
+|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| ![<img src="/readme/homepagemenu.png"](/readme/homepagemenu.png) | ![<img src="/readme/chuckPage.png](/readme/chuckPage.png) | ![<img src="/readme/dadJokePage.png](/readme/dadJokePage.png) |
+
+|     Trump Page                                                                                    | Saved Chuck Norris page                                                                                    | Saved Dad Joke Page                                                                                    |
+|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| ![<img src="/readme/trumpPage.png"](/readme/trumpPage.png) | ![<img src="/readme/SavedChuckPage.png](/readme/SavedChuckPage.png) | ![<img src="/readme/SavedDadJokePage.png](/readme/SavedDadJokePage.png) |
+
+|    Saved Trump Page                                                                                    | Chuck Norris search view                                                                                 |                                                                                   |
+|-------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| ![<img src="/readme/SavedTrumpPage.png"](/readme/SavedTrumpPage.png) | ![<img src="/readme/chucksearchView.png](/readme/chucksearchView.png) |  |
+
 
 ## Getting Started
 
